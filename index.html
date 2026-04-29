@@ -12,19 +12,20 @@
         }
 
         :root {
-            --primary-orange: #FF8C00;
-            --primary-blue: #0047AB;
-            --primary-green: #7CB342;
-            --dark-blue: #002147;
-            --accent-yellow: #FFC107;
-            --light-bg: #F5F7FA;
+            /* Updated color palette (modern + higher contrast) */
+            --primary-orange: #FF6A00;
+            --primary-blue: #1D4ED8;
+            --primary-green: #16A34A;
+            --dark-blue: #0B1220;
+            --accent-yellow: #FBBF24;
+            --light-bg: #F6F7FB;
             --white: #FFFFFF;
-            --text-dark: #1a1a1a;
-            --text-light: #555555;
-            --border-color: #E8EEF5;
-            --shadow-sm: 0 2px 8px rgba(0, 71, 171, 0.08);
-            --shadow-md: 0 8px 24px rgba(0, 71, 171, 0.12);
-            --shadow-lg: 0 16px 40px rgba(255, 140, 0, 0.15);
+            --text-dark: #0F172A;
+            --text-light: #475569;
+            --border-color: #E5E7EB;
+            --shadow-sm: 0 2px 10px rgba(15, 23, 42, 0.08);
+            --shadow-md: 0 10px 26px rgba(15, 23, 42, 0.12);
+            --shadow-lg: 0 18px 46px rgba(255, 106, 0, 0.18);
         }
 
         html {
@@ -199,7 +200,7 @@
             right: -10%;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(255, 140, 0, 0.08) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255, 106, 0, 0.10) 0%, transparent 70%);
             border-radius: 50%;
             animation: float 8s ease-in-out infinite;
             pointer-events: none;
@@ -212,7 +213,7 @@
             left: 5%;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(0, 71, 171, 0.08) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(29, 78, 216, 0.10) 0%, transparent 70%);
             border-radius: 50%;
             animation: float 10s ease-in-out infinite reverse;
             pointer-events: none;
@@ -247,7 +248,7 @@
             font-size: 1.1rem;
             letter-spacing: 2px;
             margin-bottom: 1.5rem;
-            box-shadow: 0 6px 20px rgba(255, 140, 0, 0.3);
+            box-shadow: 0 6px 20px rgba(255, 106, 0, 0.32);
         }
 
         .hero p {
@@ -290,7 +291,7 @@
 
         .btn-primary:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(255, 140, 0, 0.4);
+            box-shadow: 0 12px 32px rgba(255, 106, 0, 0.42);
         }
 
         .btn-secondary {
@@ -303,7 +304,7 @@
             background: linear-gradient(135deg, var(--primary-blue), #003080);
             color: white;
             transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(0, 71, 171, 0.3);
+            box-shadow: 0 12px 32px rgba(29, 78, 216, 0.28);
         }
 
         /* Animations */
@@ -578,13 +579,13 @@
             justify-content: center;
             font-size: 3rem;
             color: white;
-            box-shadow: 0 8px 20px rgba(255, 140, 0, 0.25);
+            box-shadow: 0 8px 20px rgba(255, 106, 0, 0.28);
             transition: all 0.3s ease;
         }
 
         .activity-card:hover .activity-icon {
             transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 12px 32px rgba(255, 140, 0, 0.35);
+            box-shadow: 0 12px 32px rgba(255, 106, 0, 0.38);
         }
 
         .activity-card h3 {
@@ -788,7 +789,7 @@
             font-size: 2.2rem;
             color: white;
             font-weight: bold;
-            box-shadow: 0 8px 20px rgba(255, 140, 0, 0.25);
+            box-shadow: 0 8px 20px rgba(255, 106, 0, 0.28);
             transition: all 0.3s ease;
         }
 
@@ -830,7 +831,7 @@
 
         .events-tab {
             appearance: none;
-            border: 2px solid rgba(0, 71, 171, 0.18);
+            border: 2px solid rgba(29, 78, 216, 0.18);
             background: rgba(255, 255, 255, 0.85);
             color: var(--primary-blue);
             padding: 0.85rem 1.4rem;
@@ -845,14 +846,14 @@
         .events-tab:hover {
             transform: translateY(-2px);
             box-shadow: var(--shadow-md);
-            border-color: rgba(255, 140, 0, 0.45);
+            border-color: rgba(255, 106, 0, 0.5);
         }
 
         .events-tab[aria-selected="true"] {
             background: linear-gradient(135deg, var(--primary-orange), #FF6B00);
             color: var(--white);
             border-color: transparent;
-            box-shadow: 0 12px 32px rgba(255, 140, 0, 0.3);
+            box-shadow: 0 12px 32px rgba(255, 106, 0, 0.34);
         }
 
         .events-panel[hidden] {
@@ -959,7 +960,7 @@
         .form-group textarea:focus {
             outline: none;
             border-color: var(--primary-orange);
-            box-shadow: 0 0 0 4px rgba(255, 140, 0, 0.1);
+            box-shadow: 0 0 0 4px rgba(255, 106, 0, 0.14);
         }
 
         .form-group textarea {
@@ -995,7 +996,7 @@
             color: white;
             font-size: 1.8rem;
             flex-shrink: 0;
-            box-shadow: 0 6px 16px rgba(255, 140, 0, 0.2);
+            box-shadow: 0 6px 16px rgba(255, 106, 0, 0.22);
         }
 
         .info-content h4 {
@@ -1094,7 +1095,7 @@
             background: linear-gradient(135deg, var(--accent-yellow), var(--primary-orange));
             color: var(--dark-blue);
             transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(255, 140, 0, 0.3);
+            box-shadow: 0 8px 20px rgba(255, 106, 0, 0.34);
         }
 
         .footer-bottom {
@@ -1326,16 +1327,16 @@
                 <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" style="filter: drop-shadow(0 20px 40px rgba(0,71,171,0.15));">
                     <defs>
                         <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#FF8C00;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#0047AB;stop-opacity:1" />
+                            <stop offset="0%" style="stop-color:#FF6A00;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#1D4ED8;stop-opacity:1" />
                         </linearGradient>
                     </defs>
                     <path d="M 250 50 L 380 120 L 380 280 Q 250 400 250 400 Q 120 280 120 280 L 120 120 Z" fill="url(#grad1)" opacity="0.1" stroke="url(#grad1)" stroke-width="3"/>
-                    <circle cx="250" cy="200" r="80" fill="#FF8C00" opacity="0.2" stroke="#0047AB" stroke-width="2"/>
-                    <circle cx="200" cy="150" r="15" fill="#7CB342" opacity="0.6"/>
-                    <circle cx="300" cy="150" r="15" fill="#FFC107" opacity="0.6"/>
-                    <circle cx="250" cy="250" r="20" fill="#FF8C00" opacity="0.5"/>
-                    <text x="250" y="430" font-size="28" fill="#0047AB" text-anchor="middle" font-weight="bold" font-family="Arial, sans-serif">Youth First</text>
+                    <circle cx="250" cy="200" r="80" fill="#FF6A00" opacity="0.2" stroke="#1D4ED8" stroke-width="2"/>
+                    <circle cx="200" cy="150" r="15" fill="#16A34A" opacity="0.6"/>
+                    <circle cx="300" cy="150" r="15" fill="#FBBF24" opacity="0.6"/>
+                    <circle cx="250" cy="250" r="20" fill="#FF6A00" opacity="0.5"/>
+                    <text x="250" y="430" font-size="28" fill="#1D4ED8" text-anchor="middle" font-weight="bold" font-family="Arial, sans-serif">Youth First</text>
                 </svg>
             </div>
         </div>
@@ -1393,7 +1394,7 @@
                     <li>Inter-parish competitions</li>
                     <li>Professional training camps</li>
                     <li>Coaching certification programs</li>
-                    <li>Equipment bank for underprivileged</li>
+                    <li>Sports equipment bank for all</li>
                     <li>Fitness workshops</li>
                 </ul>
             </div>
@@ -1538,15 +1539,15 @@
             <div class="events-grid">
             <div class="event-card">
                 <div class="event-header">
-                    <h3>Annual Sports Tournament</h3>
-                    <span class="event-date">Quarterly</span>
+                    <h3>National Shooting Ball Tournament</h3>
+                    <span class="event-date">Annual</span>
                 </div>
                 <div class="event-body">
-                    <p>Our flagship sports event featuring football, volleyball, and cricket tournaments across all villages. Open to youth of all skill levels.</p>
+                    <p>High-energy shooting ball tournament bringing together teams across the region. A celebration of sportsmanship, teamwork, and youth talent.</p>
                 </div>
                 <div class="event-footer">
-                    <span>📍 Multiple venues</span>
-                    <span>👥 200+ participants</span>
+                    <span>📍 Central ground</span>
+                    <span>👥 16+ teams</span>
                 </div>
             </div>
 
@@ -1566,7 +1567,7 @@
 
             <div class="event-card">
                 <div class="event-header">
-                    <h3>Youth Festival</h3>
+                    <h3>Nandakhal Carnival</h3>
                     <span class="event-date">Annual</span>
                 </div>
                 <div class="event-body">
@@ -1901,9 +1902,9 @@ ${message}
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
             if (window.scrollY > 50) {
-                nav.style.boxShadow = '0 8px 24px rgba(0, 71, 171, 0.12)';
+                nav.style.boxShadow = '0 8px 24px rgba(15, 23, 42, 0.14)';
             } else {
-                nav.style.boxShadow = '0 2px 8px rgba(0, 71, 171, 0.08)';
+                nav.style.boxShadow = '0 2px 10px rgba(15, 23, 42, 0.10)';
             }
         });
     </script>
