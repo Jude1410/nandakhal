@@ -73,17 +73,26 @@
         }
 
         .logo-icon {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, var(--primary-orange), #FF6B00);
-            border-radius: 10px;
+            width: 64px;
+            height: 64px;
+            background: rgba(255, 255, 255, 0.96);
+            padding: 8px;
+            /* border-radius: 10px; */
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-weight: bold;
             font-size: 1.1rem;
-            box-shadow: 0 4px 12px rgba(255, 140, 0, 0.25);
+            /* border: 1px solid rgba(0, 71, 171, 0.18); */
+            /* box-shadow:
+                0 10px 24px rgba(0, 33, 71, 0.18),
+                0 2px 0 rgba(255, 140, 0, 0.22); */
+        }
+
+        /* When logo-icon is used on <img> */
+        img.logo-icon {
+            object-fit: contain;
         }
 
         nav ul {
@@ -140,12 +149,47 @@
         .hero {
             position: relative;
             min-height: 100vh;
-            background: linear-gradient(135deg, #F0F7FF 0%, #F5F0FF 50%, #FFFAF0 100%);
+            --hero-bg-url: url('hero-bg.svg');
+            background:
+                linear-gradient(0deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+                var(--hero-bg-url);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             padding: 2rem;
+        }
+
+        .hero.has-bg .hero-content {
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            padding: 0;
+            box-shadow: none;
+            backdrop-filter: none;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+        }
+
+        .hero.has-bg h1 {
+            color: var(--white);
+            background: none;
+            -webkit-text-fill-color: initial;
+        }
+
+        .hero.has-bg p {
+            color: rgba(255, 255, 255, 0.88);
+        }
+
+        .hero.has-bg .tagline-badge {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        .hero.has-bg::before,
+        .hero.has-bg::after {
+            opacity: 0.18;
         }
 
         .hero::before {
@@ -158,6 +202,7 @@
             background: radial-gradient(circle, rgba(255, 140, 0, 0.08) 0%, transparent 70%);
             border-radius: 50%;
             animation: float 8s ease-in-out infinite;
+            pointer-events: none;
         }
 
         .hero::after {
@@ -170,6 +215,7 @@
             background: radial-gradient(circle, rgba(0, 71, 171, 0.08) 0%, transparent 70%);
             border-radius: 50%;
             animation: float 10s ease-in-out infinite reverse;
+            pointer-events: none;
         }
 
         .hero-content {
@@ -319,6 +365,13 @@
             padding: 5rem 2rem;
             max-width: 1400px;
             margin: 0 auto;
+        }
+
+        /* Hero should be full-bleed (no side gaps) */
+        section.hero {
+            max-width: none;
+            margin: 0;
+            padding: 2rem;
         }
 
         .section-header {
@@ -767,6 +820,45 @@
             gap: 2rem;
         }
 
+        .events-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 0 auto 2.25rem;
+        }
+
+        .events-tab {
+            appearance: none;
+            border: 2px solid rgba(0, 71, 171, 0.18);
+            background: rgba(255, 255, 255, 0.85);
+            color: var(--primary-blue);
+            padding: 0.85rem 1.4rem;
+            border-radius: 999px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .events-tab:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(255, 140, 0, 0.45);
+        }
+
+        .events-tab[aria-selected="true"] {
+            background: linear-gradient(135deg, var(--primary-orange), #FF6B00);
+            color: var(--white);
+            border-color: transparent;
+            box-shadow: 0 12px 32px rgba(255, 140, 0, 0.3);
+        }
+
+        .events-panel[hidden] {
+            display: none;
+        }
+
         .event-card {
             background: white;
             border-radius: 15px;
@@ -1031,8 +1123,9 @@
             }
 
             .logo-icon {
-                width: 35px;
-                height: 35px;
+                width: 100%;
+                height: 85px;
+                /* padding: 7px; */
                 font-size: 0.9rem;
             }
 
@@ -1183,7 +1276,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero has-bg" id="home">
         <div class="hero-content">
             <div class="tagline-badge">⚡ Youth Foundation</div>
             <h1>Nandakhal Youth Foundation</h1>
@@ -1428,10 +1521,21 @@
     <!-- Events Section -->
     <section class="events" id="events">
         <div class="section-header">
-            <h2>Upcoming Events & Initiatives</h2>
-            <p>Join us for these exciting programs and celebrations</p>
+            <h2>Events & Initiatives</h2>
+            <p>Explore what’s coming up next and what we’ve already achieved together</p>
         </div>
-        <div class="events-grid">
+
+        <div class="events-tabs" role="tablist" aria-label="Events tabs">
+            <button class="events-tab" type="button" role="tab" aria-selected="true" aria-controls="events-upcoming" id="events-upcoming-tab">
+                Upcoming Events
+            </button>
+            <button class="events-tab" type="button" role="tab" aria-selected="false" aria-controls="events-past" id="events-past-tab">
+                Past Events
+            </button>
+        </div>
+
+        <div class="events-panel" id="events-upcoming" role="tabpanel" aria-labelledby="events-upcoming-tab">
+            <div class="events-grid">
             <div class="event-card">
                 <div class="event-header">
                     <h3>Annual Sports Tournament</h3>
@@ -1513,6 +1617,25 @@
                 <div class="event-footer">
                     <span>📍 Health center</span>
                     <span>👥 100+ donors</span>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="events-panel" id="events-past" role="tabpanel" aria-labelledby="events-past-tab" hidden>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-header">
+                        <h3>Past Event (Placeholder)</h3>
+                        <span class="event-date">Completed</span>
+                    </div>
+                    <div class="event-body">
+                        <p>Add your completed events here. You can copy any card from “Upcoming” and paste it into this tab.</p>
+                    </div>
+                    <div class="event-footer">
+                        <span>📍 Venue</span>
+                        <span>👥 Participants</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1690,6 +1813,27 @@
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
             });
+        });
+
+        // Events tabs (Upcoming / Past)
+        const eventTabs = document.querySelectorAll('.events-tab[role="tab"]');
+        const eventPanels = document.querySelectorAll('.events-panel[role="tabpanel"]');
+
+        function setEventsTab(activeTabId) {
+            eventTabs.forEach(tab => {
+                const isActive = tab.id === activeTabId;
+                tab.setAttribute('aria-selected', String(isActive));
+                tab.tabIndex = isActive ? 0 : -1;
+            });
+
+            eventPanels.forEach(panel => {
+                const isActive = panel.getAttribute('aria-labelledby') === activeTabId;
+                panel.toggleAttribute('hidden', !isActive);
+            });
+        }
+
+        eventTabs.forEach(tab => {
+            tab.addEventListener('click', () => setEventsTab(tab.id));
         });
 
         // Scroll animations
