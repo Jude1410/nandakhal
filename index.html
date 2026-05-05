@@ -74,21 +74,12 @@
         }
 
         .logo-icon {
-            width: 64px;
             height: 64px;
-            background: rgba(255, 255, 255, 0.96);
             padding: 8px;
-            /* border-radius: 10px; */
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 1.1rem;
-            /* border: 1px solid rgba(0, 71, 171, 0.18); */
-            /* box-shadow:
-                0 10px 24px rgba(0, 33, 71, 0.18),
-                0 2px 0 rgba(255, 140, 0, 0.22); */
+            font-size: 3.0rem;
         }
 
         /* When logo-icon is used on <img> */
@@ -905,15 +896,6 @@
             line-height: 1.6;
         }
 
-        .event-footer {
-            display: flex;
-            gap: 1rem;
-            padding: 1.5rem;
-            background: var(--light-bg);
-            border-top: 2px solid var(--border-color);
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
 
         /* Contact Section */
         .contact {
@@ -1124,10 +1106,8 @@
             }
 
             .logo-icon {
-                width: 100%;
                 height: 85px;
-                /* padding: 7px; */
-                font-size: 0.9rem;
+                font-size: 2.5rem;
             }
 
             .hamburger {
@@ -1254,9 +1234,7 @@
     <nav>
         <div class="nav-container">
             <div class="logo">
-                <!-- <div class="logo-icon">NYF</div> -->
-                 <img src="preview_trans.png" alt="Logo"  class="logo-icon">
-                <span>NANDAKHAL</span>
+                <div class="logo-icon">NYF</div>
             </div>
             <ul id="navMenu">
                 <li><a href="#home">Home</a></li>
@@ -1538,17 +1516,16 @@
         <div class="events-panel" id="events-upcoming" role="tabpanel" aria-labelledby="events-upcoming-tab">
             <div class="events-grid">
             <div class="event-card">
+                <a style="display: contents;" href="https://nandakhal.com/nyf/shootingball2026/" target="_blank">
                 <div class="event-header">
                     <h3>National Shooting Ball Tournament</h3>
                     <span class="event-date">Annual</span>
                 </div>
                 <div class="event-body">
                     <p>High-energy shooting ball tournament bringing together teams across the region. A celebration of sportsmanship, teamwork, and youth talent.</p>
+                    <span style="color: #1D4ED8; font-weight: bold;">Click for Visit</span>
                 </div>
-                <div class="event-footer">
-                    <span>📍 Central ground</span>
-                    <span>👥 16+ teams</span>
-                </div>
+                </a>
             </div>
 
             <div class="event-card">
@@ -1558,10 +1535,6 @@
                 </div>
                 <div class="event-body">
                     <p>Interactive sessions covering resume writing, interview skills, job market insights, and career planning with industry professionals.</p>
-                </div>
-                <div class="event-footer">
-                    <span>📍 Community centers</span>
-                    <span>👥 50+ participants</span>
                 </div>
             </div>
 
@@ -1573,10 +1546,6 @@
                 <div class="event-body">
                     <p>Celebration of culture, talent, and community spirit featuring music, drama, food, and various cultural performances.</p>
                 </div>
-                <div class="event-footer">
-                    <span>📍 Central ground</span>
-                    <span>👥 1000+ attendees</span>
-                </div>
             </div>
 
             <div class="event-card">
@@ -1586,10 +1555,6 @@
                 </div>
                 <div class="event-body">
                     <p>Professional coaching certification programs for aspiring sports coaches with hands-on training and certification.</p>
-                </div>
-                <div class="event-footer">
-                    <span>📍 Training center</span>
-                    <span>👥 30+ trainees</span>
                 </div>
             </div>
 
@@ -1601,10 +1566,6 @@
                 <div class="event-body">
                     <p>Environmental awareness and tree plantation initiatives to maintain and expand the green belt across villages.</p>
                 </div>
-                <div class="event-footer">
-                    <span>📍 Multiple locations</span>
-                    <span>👥 100+ volunteers</span>
-                </div>
             </div>
 
             <div class="event-card">
@@ -1615,10 +1576,6 @@
                 <div class="event-body">
                     <p>Community health initiative partnering with medical organizations to promote blood donation and health awareness.</p>
                 </div>
-                <div class="event-footer">
-                    <span>📍 Health center</span>
-                    <span>👥 100+ donors</span>
-                </div>
             </div>
             </div>
         </div>
@@ -1627,18 +1584,23 @@
             <div class="events-grid">
                 <div class="event-card">
                     <div class="event-header">
-                        <h3>Past Event (Placeholder)</h3>
+                        <h3>Blood Donation Camp</h3>
                         <span class="event-date">Completed</span>
                     </div>
                     <div class="event-body">
-                        <p>Add your completed events here. You can copy any card from “Upcoming” and paste it into this tab.</p>
-                    </div>
-                    <div class="event-footer">
-                        <span>📍 Venue</span>
-                        <span>👥 Participants</span>
+                        <p>Community health initiative partnering with medical organizations to promote blood donation and health awareness.</p>
                     </div>
                 </div>
-            </div>
+            <div class="event-card">
+                <div class="event-header">
+                    <h3>Cricket Tournament League</h3>
+                    <span class="event-date">Annual</span>
+                </div>
+                <div class="event-body">
+                    <p>Our flagship T20 cricket tournament featuring local clubs. Experience high-octane matches, professional commentary, and a grand finale under the lights.</p>
+                </div>
+        </div>
+        </div>
         </div>
     </section>
 
